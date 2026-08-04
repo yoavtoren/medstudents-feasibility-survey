@@ -870,6 +870,11 @@
     return n?(sum/n):null;
   }
   function feasLabel(s){ return s>=3.5?"גבוהה":(s>=2.5?"בינונית":"נמוכה"); }
+  /* first step that is not fully answered; navigation beyond it is locked */
+  function firstIncompleteStep(){
+    for(var i=0;i<STEPS.length;i++){ if(stepAnswered(STEPS[i].id)<NQ) return i; }
+    return STEPS.length-1;
+  }
   function firstUnansweredCard(){
     for(var i=0;i<CARDS.length;i++){
       var c=CARDS[i];
