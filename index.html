@@ -1521,6 +1521,10 @@
 
   /* keyboard: 1-5 answers, arrow keys navigate */
   document.addEventListener("keydown",function(e){
+    if((e.key==="Enter"||e.key===" ")&&e.target&&e.target.closest&&e.target.closest(".axis-info")){
+      e.preventDefault(); e.target.closest(".axis-info").dispatchEvent(new MouseEvent("click",{bubbles:true}));
+      return;
+    }
     if(document.body.classList.contains("overlay-open")) return;
     if(e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
     var card=CARDS[state.cardIdx];
