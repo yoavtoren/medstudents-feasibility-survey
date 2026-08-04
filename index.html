@@ -1410,6 +1410,19 @@
       return;
     }
 
+    var ax=t.closest?t.closest(".axis-info"):null;
+    if(ax){
+      var pid = ax.dataset.axis==="x" ? "axisInfoX" : "axisInfoY";
+      var other = pid==="axisInfoX" ? "axisInfoY" : "axisInfoX";
+      var panel=$(pid);
+      panel.hidden=!panel.hidden;
+      $(other).hidden=true;
+      if(!panel.hidden) panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+      return;
+    }
+    var axc=t.closest?t.closest("[data-close-axis]"):null;
+    if(axc){ $(axc.dataset.closeAxis).hidden=true; return; }
+
     var pt=t.closest?t.closest(".map-pt"):null;
     if(pt){
       var pi=parseInt(pt.dataset.pt,10);
