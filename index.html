@@ -953,6 +953,7 @@
         + '<span class="crumb">צעד '+(si+1)+' מתוך '+STEPS.length+' · שאלה '+(card.crit+1)+' מתוך '+NQ+'</span>'
         + '<div class="qdots" aria-hidden="true">'+dots+'</div></div>'
         + '<div class="qcard-body">'
+        + '<div class="qstep-title" style="border-color:'+STEP_COLORS[si]+'">'+esc(s.name)+'</div>'
         + '<div class="qtext">'+esc(c.question)+'</div>'
         + (c.note?'<div class="qnote">('+esc(c.note)+')</div>':'')
         + '<div class="opts" role="radiogroup" aria-label="'+esc(c.question)+'">'+optsH+'</div>'
