@@ -656,7 +656,10 @@
   @media (max-width:880px){
     :root{--hdrH:7.6rem;}
     .layout{flex-direction:column;gap:.8rem;margin-top:.8rem;}
-    #sideNav{width:100%;position:static;border-radius:.7rem;}
+    /* question card first, steps rail below it - keeps the card anchored right
+       under the header so prev/next transitions don't visually jump */
+    #mainCol{order:1;}
+    #sideNav{order:2;width:100%;position:static;border-radius:.7rem;}
     #stepList{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;}
     .step-item{
       flex-direction:column;gap:.25rem;min-width:6.2rem;flex-shrink:0;
