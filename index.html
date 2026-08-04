@@ -1058,26 +1058,6 @@
   }
 
   /* ==================== live results ==================== */
-  function renderTable(flashStepIdx){
-    var h='<thead><tr><th>צעד</th><th>פוטנציאל השפעה (סקר)</th><th>התקדמות</th><th>ציון היתכנות יישום</th></tr></thead><tbody>';
-    STEPS.forEach(function(s,i){
-      var n=stepAnswered(s.id), fs=feasibilityScore(s.id), b=impactBucket(s.probability);
-      var scoreH;
-      if(fs==null) scoreH='<td class="score-cell empty">-</td>';
-      else if(n<NQ) scoreH='<td class="score-cell">'+fs.toFixed(1)+' <span class="partial">(חלקי - '+n+'/'+NQ+')</span></td>';
-      else scoreH='<td class="score-cell">'+fs.toFixed(1)+' מתוך 5 ('+feasLabel(fs)+')</td>';
-      var impactH = allComplete()
-        ? Math.round(s.probability*100)+'% ('+b.label+')'
-        : '<span style="color:#b9b29c;font-size:.78rem;">🔒 יוצג בסיום</span>';
-      h+='<tr'+(flashStepIdx===i?' class="flash"':'')+'>'
-        + '<td><span class="tbl-step"><span class="tbl-num" style="background:'+STEP_COLORS[i]+'">'+(i+1)+'</span>'+esc(s.name)+'</span></td>'
-        + '<td>'+impactH+'</td>'
-        + '<td><div class="minitrack"><div class="minifill" style="width:'+(100*n/NQ)+'%"></div></div></td>'
-        + scoreH + '</tr>';
-    });
-    $("liveTable").innerHTML=h+'</tbody>';
-  }
-
   var IMPACT_ROW_LABELS=["נמוך","בינוני","גבוה","גבוה מאוד"];
   var X_TICK_LABELS={1:"נמוכה מאוד",2:"נמוכה",3:"בינונית",4:"גבוהה",5:"גבוהה מאוד"};
   function renderMap(){
