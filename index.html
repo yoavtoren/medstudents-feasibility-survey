@@ -406,10 +406,10 @@
   }
   .opt.sel .num{background:rgb(var(--tc));color:var(--selfg);}
   .opt.sel::after{
-    content:"✓";position:absolute;top:-.55rem;inset-inline-end:-.35rem;
-    width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent);color:#fff;
-    font-size:.85rem;font-weight:bold;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 .2rem .5rem rgba(36,79,59,.4);animation:popIn .3s ease both;
+    content:"✓";position:absolute;top:-.45rem;inset-inline-end:-.3rem;
+    width:1.25rem;height:1.25rem;border-radius:50%;background:rgb(var(--tc));color:var(--selfg);
+    font-size:.7rem;font-weight:bold;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.22);animation:popIn .25s ease both;
   }
   .qcard.missing .opts{animation:shake .4s ease;}
   .qcard.missing .qtext::after{content:"  ⚠ נדרש לבחור דירוג";color:var(--danger);font-size:.85rem;}
