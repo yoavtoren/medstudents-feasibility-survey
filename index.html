@@ -577,8 +577,9 @@
     box-shadow:0 14px 34px rgba(39,57,73,.18);
     direction:rtl;text-align:right;
     font-family:Arial, sans-serif;
-    animation:fadeUp .3s ease both;
+    animation:popFade .25s ease both;
   }
+  @keyframes popFade{from{opacity:0;}to{opacity:1;}}
   .axis-explain[hidden]{display:none !important;}
   .axis-explain > strong{
     display:block;margin:0;padding:16px 20px 10px 52px;
