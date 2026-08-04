@@ -1008,9 +1008,12 @@
       if(fs==null) scoreH='<td class="score-cell empty">—</td>';
       else if(n<NQ) scoreH='<td class="score-cell">'+fs.toFixed(1)+' <span class="partial">(חלקי — '+n+'/'+NQ+')</span></td>';
       else scoreH='<td class="score-cell">'+fs.toFixed(1)+' מתוך 5 ('+feasLabel(fs)+')</td>';
+      var impactH = allComplete()
+        ? Math.round(s.probability*100)+'% ('+b.label+')'
+        : '<span style="color:#b9b29c;font-size:.78rem;">🔒 יוצג בסיום</span>';
       h+='<tr'+(flashStepIdx===i?' class="flash"':'')+'>'
         + '<td><span class="tbl-step"><span class="tbl-num" style="background:'+STEP_COLORS[i]+'">'+(i+1)+'</span>'+esc(s.name)+'</span></td>'
-        + '<td>'+Math.round(s.probability*100)+'% ('+b.label+')</td>'
+        + '<td>'+impactH+'</td>'
         + '<td><div class="minitrack"><div class="minifill" style="width:'+(100*n/NQ)+'%"></div></div></td>'
         + scoreH + '</tr>';
     });
