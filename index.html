@@ -1154,10 +1154,10 @@
     var nextAllowed = card.type!=="q" || !!state.ratings[STEPS[card.step].id][CRITERIA[card.crit].id];
     var nextDis = (idx>=CARDS.length-1 || !nextAllowed) ? " disabled":"";
     return '<div class="qcard-foot">'
-      + '<button class="navarrow" data-act="prev" type="button"'+prevDis+'>→ הקודם</button>'
+      + '<button id="resetBtn" type="button">↻ איפוס הכול</button>'
       + '<span class="advance-note" id="advanceNote"></span>'
       + '<span style="display:flex;align-items:center;gap:.8rem;">'
-      + '<button id="resetBtn" type="button">↻ איפוס הכול</button>'
+      + '<button class="navarrow" data-act="prev" type="button"'+prevDis+'>→ הקודם</button>'
       + '<button class="navarrow" data-act="fwd" type="button"'+nextDis+'>הבא ←</button>'
       + '</span></div>';
   }
