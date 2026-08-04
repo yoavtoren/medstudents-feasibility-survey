@@ -329,11 +329,14 @@
   .center-card{align-items:center;text-align:center;}
   .stepplate{
     display:inline-flex;flex-direction:column;align-items:center;gap:.2rem;
-    border:1.5px solid;border-radius:.9rem;
-    padding:.7rem 1.8rem;max-width:100%;
+    border:none;border-radius:.9rem;
+    padding:.8rem 2rem;max-width:100%;
+    box-shadow:0 .4rem 1.1rem rgba(0,0,0,.22);
   }
-  .stepplate .sp-cap{font-size:.72rem;font-weight:bold;letter-spacing:.02em;}
-  .stepplate .sp-name{font-size:clamp(1.2rem,3.1vw,1.6rem);font-weight:bold;line-height:1.3;color:var(--ink);}
+  .stepplate .sp-name{
+    font-size:clamp(1.2rem,3.1vw,1.6rem);font-weight:bold;line-height:1.3;
+    color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);
+  }
   .q-cap{font-size:.8rem;font-weight:bold;color:var(--blue-dark);margin-bottom:-.55rem;}
   .qtext{font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:bold;line-height:1.45;color:#2b3a33;}
   .qnote{font-size:.9rem;color:var(--muted);margin-top:-.5rem;}
