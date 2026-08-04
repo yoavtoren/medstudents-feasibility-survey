@@ -848,7 +848,7 @@
     }catch(e){ return false; }
   }
   function saveState(){
-    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ratings:state.ratings,cardIdx:state.cardIdx,sound:state.sound})); }catch(e){}
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ratings:state.ratings,cardIdx:state.cardIdx,sound:state.sound,mapHintUsed:state.mapHintUsed})); }catch(e){}
   }
 
   /* ==================== derived ==================== */
