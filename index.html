@@ -949,7 +949,7 @@
       }
       var optsH='';
       for(var val=1;val<=5;val++){
-        optsH+='<button type="button" class="opt'+(v===val?" sel":"")+'" role="radio" aria-checked="'+(v===val)+'" data-rate="'+val+'">'
+        optsH+='<button type="button" class="opt t'+val+(v===val?" sel":"")+'" role="radio" aria-checked="'+(v===val)+'" data-rate="'+val+'">'
           + '<span class="num">'+val+'</span><span>'+labels[val]+'</span></button>';
       }
       return '<div class="stepbanner" style="background-color:'+STEP_COLORS[si]+'">'
