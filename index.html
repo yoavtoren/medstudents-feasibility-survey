@@ -1467,7 +1467,6 @@
       var panel=$(pid);
       panel.hidden=!panel.hidden;
       $(other).hidden=true;
-      if(!panel.hidden) panel.scrollIntoView({behavior:"smooth",block:"nearest"});
       return;
     }
     var axc=t.closest?t.closest("[data-close-axis]"):null;
