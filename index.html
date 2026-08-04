@@ -335,10 +335,11 @@
     padding:.65rem 1.2rem;border-bottom:1px solid var(--gborder);background:var(--gpanel);
   }
   .crumb{font-size:.78rem;color:var(--muted);font-weight:bold;}
-  .qdots{display:flex;gap:.35rem;margin-inline-start:auto;}
-  .qdot{width:.65rem;height:.65rem;border-radius:50%;background:#d9d2bd;transition:all .3s ease;}
-  .qdot.on{background:var(--blue);transform:scale(1.15);}
-  .qdot.cur{outline:2px solid var(--blue-soft);outline-offset:2px;}
+  .qdots{display:flex;gap:.3rem;margin-inline-start:auto;align-items:center;}
+  .qdot{width:1.1rem;height:.38rem;border-radius:99px;background:#ddd6c2;transition:all .3s cubic-bezier(.22,1,.36,1);}
+  .qdot.on{background:var(--blue);}
+  .qdot.cur{width:1.7rem;background:var(--blue-soft);}
+  .qdot.on.cur{background:var(--blue);}
   .qcard-body{
     flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;
     text-align:center;
