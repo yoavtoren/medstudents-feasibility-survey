@@ -512,14 +512,19 @@
   .score-cell .partial{font-weight:normal;font-size:.72rem;color:var(--muted);}
   .score-cell.empty{color:#b9b29c;font-weight:normal;}
 
-  .map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .map-scroll svg{min-width:40rem;max-width:52rem;width:100%;display:block;margin:0 auto;}
-  .axis-caption{
-    display:flex;align-items:center;gap:.45rem;justify-content:flex-start;
-    font-size:.85rem;font-weight:bold;color:var(--ink);
-    margin:0 auto .5rem;max-width:52rem;
+  .map-flex{
+    display:flex;align-items:center;gap:.4rem;
+    direction:ltr; /* keep the Y-axis label on the left, next to the axis */
+    max-width:56rem;margin:0 auto;
   }
-  .axis-caption .arr{color:var(--accent-dark);font-size:1rem;}
+  .ylabel{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-size:.82rem;font-weight:bold;color:var(--ink);
+    text-align:center;line-height:1.25;flex-shrink:0;
+    max-height:22rem;
+  }
+  .map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;flex:1;min-width:0;}
+  .map-scroll svg{min-width:40rem;max-width:52rem;width:100%;display:block;margin:0 auto;}
   .map-hint{font-size:.8rem;color:var(--muted);text-align:center;margin-top:.5rem;}
   .map-empty{
     text-align:center;font-size:.9rem;color:var(--muted);
