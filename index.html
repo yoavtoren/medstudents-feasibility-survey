@@ -1273,7 +1273,7 @@
     var justCompletedStep = !wasStepDone && stepAnswered(s.id)===NQ;
     refreshResults(card.step);
 
-    /* advance immediately after selection */
+    /* short pause so the selection registers, then advance (re-click resets) */
     clearTimeout(advanceTimer);
     advanceTimer=setTimeout(function(){
       go(state.cardIdx+1,1);
@@ -1281,7 +1281,7 @@
         if(allComplete()){ sndFinish(); }
         else{ sndStep(); celebrate(card.step); }
       }
-    },120);
+    },450);
   }
 
   document.addEventListener("click",function(e){
