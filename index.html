@@ -1287,14 +1287,16 @@
     }
     /* persistent "click me" nudge on the first plotted point, until first click */
     if(pts.length && !state.mapHintUsed && openPt<0){
-      var p0=pts[0], BW=274, BH=60;
+      /* compact bubble on mobile: taller (text wraps to 3 lines) and narrow enough
+         to stay centered over the finger inside the small viewBox */
+      var p0=pts[0], BW=mob?200:274, BH=mob?80:60, BF=mob?10.5:11.5;
       var below = p0.y < H/2;
       var bx=Math.min(Math.max(p0.x-BW/2,8),W-BW-8);
       var fingerY, by;
       if(below){ fingerY=p0.y+R+30; by=fingerY+10; }
-      else { fingerY=p0.y-R-14; by=fingerY-30-BH; }
+      else { fingerY=p0.y-R-14; by=Math.max(4,fingerY-30-BH); }
       svg+='<g class="map-hint-float">'
-        + '<foreignObject x="'+bx+'" y="'+by+'" width="'+BW+'" height="'+BH+'"><div xmlns="http://www.w3.org/1999/xhtml" class="map-hint-bubble">לחצו על העיגולים במפה כדי לראות את פרטי ההיתכנות וההשפעה של כל צעד</div></foreignObject>'
+        + '<foreignObject x="'+bx+'" y="'+by+'" width="'+BW+'" height="'+BH+'"><div xmlns="http://www.w3.org/1999/xhtml" class="map-hint-bubble" style="font-size:'+BF+'px">לחצו על העיגולים במפה כדי לראות את פרטי ההיתכנות וההשפעה של כל צעד</div></foreignObject>'
         + '<text class="map-hint-finger" x="'+p0.x+'" y="'+fingerY+'" text-anchor="middle" font-size="24">'+(below?"👆":"👇")+'</text></g>';
     }
     svg+='</svg>';
