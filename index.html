@@ -1047,8 +1047,7 @@
       + '<line x1="'+padL+'" y1="'+(padT+plotH)+'" x2="'+(padL+plotW)+'" y2="'+(padT+plotH)+'" stroke="#1c2420" stroke-width="1.5"/>'
       + '<text x="'+(padL+plotW/2)+'" y="'+(H-10)+'" text-anchor="middle" font-size="13" font-weight="bold" fill="#1c2420">היתכנות ליישום</text>';
     var placed=[];
-    STEPS.forEach(function(s,i){
-      if(stepAnswered(s.id)<NQ) return;
+    if(showPoints) STEPS.forEach(function(s,i){
       var fs=feasibilityScore(s.id), lvl=impactBucket(s.probability).level;
       var x=xPos(fs), y=yBand(lvl), bump=0;
       placed.forEach(function(p){ if(Math.abs(p.x-x)<26 && Math.abs(p.y-y)<1) bump++; });
