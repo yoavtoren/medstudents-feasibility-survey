@@ -1100,7 +1100,11 @@
     /* pop-in animation only when a new point joins the map */
     if(soft===undefined){ soft = pts.length===renderMap._n; }
     renderMap._n=pts.length;
-    var W=720,H=326,MX=152,MY=24,MW=552,MH=218,R=12;
+    /* compact geometry on narrow screens - the whole map fits without horizontal scroll */
+    var mob=window.innerWidth<=640;
+    var W=mob?440:720,H=mob?280:326,MX=mob?86:152,MY=mob?20:24,MW=mob?340:552,MH=mob?192:218,R=12;
+    var F=mob?{tickNum:12,tickLbl:10.5,rowLbl:11.5,xTitle:14,yTitle:12.5,ySub:10,ptNum:11}
+             :{tickNum:15,tickLbl:13.5,rowLbl:15,xTitle:18,yTitle:16,ySub:12.5,ptNum:12.5};
     var cw=MW/5,ch=MH/4;
     function xPos(v){ return MX+(Math.min(5,Math.max(1,v))-0.5)*cw; }
     var svg='<svg viewBox="0 0 '+W+' '+H+'"'+(soft?' class="no-anim"':'')+' role="img" aria-label="מפת היתכנות ופוטנציאל השפעה">'
