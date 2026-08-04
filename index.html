@@ -566,6 +566,21 @@
     animation:bubblePulse 1.6s ease-in-out infinite;
   }
   @keyframes bubblePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.045);}}
+  .axis-info{cursor:pointer;outline:none;}
+  .axis-info:hover text,.axis-info:focus text{fill:var(--blue-dark);text-decoration:underline;}
+  .axis-explain{
+    margin-top:.8rem;border:1.5px solid var(--gborder);border-radius:.7rem;
+    background:var(--blue-bg);padding:.9rem 2.4rem .7rem 1.1rem;font-size:.88rem;
+    position:relative;animation:fadeUp .3s ease both;
+  }
+  .axis-explain[hidden]{display:none;}
+  .axis-explain strong{display:block;margin-bottom:.4rem;color:var(--blue-dark);}
+  .axis-explain p{margin:0 0 .45rem;color:#33403a;}
+  .axis-close{
+    position:absolute;top:.45rem;left:.55rem;background:none;border:none;
+    font-size:1rem;color:var(--muted);padding:.3rem;line-height:1;
+  }
+  .axis-close:hover{color:var(--ink);}
   .legend{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:.9rem;padding-top:.7rem;border-top:1px dashed var(--line);font-size:.78rem;}
   .legend .lg-item{display:flex;align-items:center;gap:.4rem;}
   .legend .lg-dot{width:1.15rem;height:1.15rem;border-radius:50%;color:#fff;font-size:.65rem;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
