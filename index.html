@@ -1356,7 +1356,14 @@
     if(stepBtn){ go(stepFirstIdx(parseInt(stepBtn.dataset.goto,10)), 1); return; }
 
     var pt=t.closest?t.closest(".map-pt"):null;
-    if(pt){ showMapDetail(parseInt(pt.dataset.pt,10)); return; }
+    if(pt){
+      var pi=parseInt(pt.dataset.pt,10);
+      openPt = openPt===pi ? -1 : pi;
+      if(!state.mapHintUsed){ state.mapHintUsed=true; saveState(); }
+      renderMap(true);
+      return;
+    }
+    if(openPt>=0 && t.closest && t.closest("#mapContainer")){ openPt=-1; renderMap(true); return; }
 
     if(t.id==="introNextBtn"){ introPage(2); sndSwoosh(); return; }
     if(t.id==="introBackBtn"){ introPage(1); sndSwoosh(); return; }
