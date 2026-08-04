@@ -822,6 +822,7 @@
       });
     }
     if(sv && typeof sv.sound==="boolean") state.sound=sv.sound;
+    if(sv && sv.mapHintUsed) state.mapHintUsed=true;
     return any;
   }
   function loadState(){
