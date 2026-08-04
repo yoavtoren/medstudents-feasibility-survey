@@ -350,7 +350,16 @@
   .qnote{font-size:.9rem;color:var(--muted);margin-top:-.5rem;}
   .qhint{font-size:.8rem;color:var(--muted);}
 
-  .opts{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:52rem;}
+  .opts{
+    display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:54rem;
+    position:relative;padding-top:1.15rem;
+  }
+  .opts::before{
+    content:"";position:absolute;top:.25rem;right:1.5%;left:1.5%;height:.35rem;
+    border-radius:99px;
+    background:linear-gradient(to left,#e6574f,#f08a4b,#f6c453,#a6d96a,#47b464);
+    box-shadow:inset 0 1px 2px rgba(0,0,0,.15);
+  }
   /* traffic-light tones: 1=red … 5=green (colors from the source dashboard) */
   .t1{--tc:230,87,79;--selfg:#fff;}
   .t2{--tc:240,138,75;--selfg:#fff;}
