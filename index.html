@@ -809,7 +809,7 @@
   function stepFirstIdx(si){ return si*NQ; }
 
   /* ==================== state ==================== */
-  var state = {ratings:{}, cardIdx:0, sound:true};
+  var state = {ratings:{}, cardIdx:0, sound:true, mapHintUsed:false};
   STEPS.forEach(function(s){ state.ratings[s.id]={}; });
   var advanceTimer=null;
 
