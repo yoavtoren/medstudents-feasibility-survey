@@ -1163,8 +1163,14 @@
     el.innerHTML=cardHTML(CARDS[state.cardIdx]);
     var old=stage.firstElementChild;
     if(old){
+      /* the outgoing card goes position:absolute - lock the stage height so the
+         page below doesn't collapse upward for 150ms (visible jump on mobile) */
+      stage.style.minHeight=stage.offsetHeight+"px";
       old.className="qcard out";
-      setTimeout(function(){ stage.innerHTML=""; stage.appendChild(el); },150);
+      setTimeout(function(){
+        stage.innerHTML=""; stage.appendChild(el);
+        requestAnimationFrame(function(){ stage.style.minHeight=""; });
+      },150);
     }else{
       stage.appendChild(el);
     }
