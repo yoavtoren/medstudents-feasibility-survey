@@ -917,10 +917,6 @@
   function sndStep(){ tone(523,0,.14,.14); tone(659,.09,.14,.14); tone(784,.18,.22,.15); }
   function sndFinish(){ tone(523,0,.15,.15); tone(659,.1,.15,.15); tone(784,.2,.15,.15); tone(1047,.3,.4,.17); tone(1319,.42,.35,.1); }
   function sndSwoosh(){ tone(340,0,.08,.06,"triangle"); }
-  function updateSoundBtn(){
-    $("soundBtn").textContent = state.sound ? "🔊" : "🔇";
-    $("soundBtn").setAttribute("aria-pressed", state.sound ? "true":"false");
-  }
 
   /* ==================== confetti ==================== */
   var CONF_COLORS=["#0067B1","#D62728","#2E7D32","#7B1FA2","#F28E2B","#f6c453","#C2185B","#008C95"];
@@ -1380,11 +1376,6 @@
       setTimeout(function(){ ov.style.display="none"; },420);
       return;
     }
-    if(t.id==="soundBtn"){
-      state.sound=!state.sound; saveState(); updateSoundBtn();
-      if(state.sound){ sndPick(); toast("הצלילים הופעלו",true); } else { toast("הצלילים הושתקו",true); }
-      return;
-    }
     if(t.id==="livePill"){ $("liveResults").scrollIntoView({behavior:"smooth"}); return; }
     if(t.id==="resultsNavBtn"){
       if(allComplete()){ $("liveResults").scrollIntoView({behavior:"smooth"}); }
@@ -1422,13 +1413,6 @@
       if(card.type!=="q"||state.ratings[STEPS[card.step].id][CRITERIA[card.crit].id]) go(state.cardIdx+1,1);
     }
     else if(e.key==="ArrowRight"){ go(state.cardIdx-1,-1); }
-  });
-
-  /* re-draw the map with the geometry that fits the new width (rotation / resize) */
-  var resizeTimer=null;
-  window.addEventListener("resize",function(){
-    clearTimeout(resizeTimer);
-    resizeTimer=setTimeout(function(){ renderMap(true); },150);
   });
 
   /* ==================== init ==================== */
