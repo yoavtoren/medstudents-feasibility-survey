@@ -951,7 +951,7 @@
         + '<span class="sp-name">'+esc(s.name)+'</span>'
         + '</div>'
         + '<div class="q-cap">קריטריון '+(card.crit+1)+' מתוך '+NQ+'</div>'
-        + '<div class="qtext">'+esc(c.question)+'</div>'
+        + '<div class="qtext">'+markQ(c)+'</div>'
         + (c.note?'<div class="qnote">('+esc(c.note)+')</div>':'')
         + '<div class="opts" role="radiogroup" aria-label="'+esc(c.question)+'">'+optsH+'</div>'
         + '<div class="qhint">'+(v?'ניתן לשנות את הבחירה בלחיצה על דירוג אחר':'לחצו על הדירוג המתאים - והמעבר לשאלה הבאה יתבצע אוטומטית')+'</div>'
