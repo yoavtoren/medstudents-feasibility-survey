@@ -623,7 +623,7 @@
     .step-item .step-label{font-size:.66rem;}
     #resultsNavBtn{margin:.5rem .7rem;}
     .opts{flex-direction:column;}
-    .opt{flex:0 0 auto;flex-direction:row;justify-content:flex-start;gap:.8rem;min-height:3.6rem;padding:.5rem .9rem;min-width:0;}
+    .opt{flex-direction:row;justify-content:flex-start;gap:.8rem;min-height:3.6rem;padding:.5rem .9rem;min-width:0;}
     .qcard-body{padding:1.1rem 1rem;justify-content:flex-start;}
     #stage{min-height:auto;}
     .qcard-foot{position:sticky;bottom:0;}
@@ -632,14 +632,6 @@
     .intro-head{padding:1.2rem 1.1rem 1rem;}
     .intro-foot{padding:.8rem 1.1rem;}
     .sb-name{min-width:0;}
-  }
-  @media (max-width:640px){
-    .map-scroll{overflow-x:visible;}
-    .map-scroll svg{min-width:0;max-width:100%;}
-    .legend{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .9rem;font-size:.75rem;}
-    .legend .lg-item{align-items:flex-start;}
-    .legend .lg-dot{margin-top:.1rem;}
-    .rc-body{padding:.9rem .8rem;}
   }
 </style>
 </head>
@@ -764,7 +756,7 @@
   </div>
 </section>
 
-<button id="livePill" type="button">📊 תוצאות חיות <span class="badge" id="livePillBadge">0/40</span></button>
+<button id="livePill" type="button">📊 מפת תוצאות חיות <span class="badge" id="livePillBadge">0/40</span></button>
 <div id="toast" role="status"></div>
 
 <script>
