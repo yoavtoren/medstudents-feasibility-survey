@@ -1120,10 +1120,11 @@
     for(var row=0;row<4;row++){
       svg+='<text x="'+(MX-14)+'" y="'+(MY+row*ch+ch/2+5)+'" text-anchor="start" font-size="15" font-weight="bold" fill="#40392f">'+IMPACT_ROW_LABELS[3-row]+'</text>';
     }
-    svg+='<text x="'+(MX+MW/2)+'" y="'+(MY+MH+66)+'" text-anchor="middle" font-size="18" font-weight="bold" fill="#24382f">היתכנות ליישום</text>';
+    svg+='<g class="axis-info" data-axis="x" role="button" tabindex="0" aria-label="הסבר על ציר ההיתכנות">'
+      + '<text x="'+(MX+MW/2)+'" y="'+(MY+MH+66)+'" text-anchor="middle" font-size="18" font-weight="bold" fill="#24382f">היתכנות ליישום ⓘ</text></g>';
     var ytx=42, yty=MY+MH/2;
-    svg+='<g transform="rotate(-90 '+ytx+' '+yty+')"><text text-anchor="middle" fill="#24382f">'
-      + '<tspan x="'+ytx+'" y="'+(yty-10)+'" font-size="16" font-weight="bold">פוטנציאל השפעת הצעד</tspan>'
+    svg+='<g class="axis-info" data-axis="y" role="button" tabindex="0" aria-label="הסבר על ציר פוטנציאל ההשפעה" transform="rotate(-90 '+ytx+' '+yty+')"><text text-anchor="middle" fill="#24382f">'
+      + '<tspan x="'+ytx+'" y="'+(yty-10)+'" font-size="16" font-weight="bold">פוטנציאל השפעת הצעד ⓘ</tspan>'
       + '<tspan x="'+ytx+'" y="'+(yty+10)+'" font-size="12.5" font-weight="bold">(על פי סקר הסטודנטים)</tspan></text></g>';
     /* spread overlapping points vertically inside their band, like the source dashboard */
     pts.forEach(function(p){ p.x=xPos(p.fs); });
