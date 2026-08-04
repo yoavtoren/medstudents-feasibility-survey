@@ -286,6 +286,9 @@
   .step-item.partial .step-status{background:#fff3d6;border-color:#e8c877;color:#8a6d1f;}
   .step-item.complete .step-status{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-dark);}
   .step-item.complete .step-status::after{content:" ✓";}
+  .step-item.locked{opacity:.5;cursor:not-allowed;}
+  .step-item.locked:hover{background:none;}
+  .step-item.locked .step-status{background:#eee9db;border-color:#d8d0ba;color:#9a927c;}
   #resultsNavBtn{
     display:block;width:calc(100% - 1.4rem);margin:.7rem;padding:.65rem;
     border-radius:.6rem;border:none;font-size:.85rem;font-weight:bold;
