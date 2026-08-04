@@ -1366,7 +1366,15 @@
     }
 
     var stepBtn=t.closest?t.closest("[data-goto]"):null;
-    if(stepBtn){ go(stepFirstIdx(parseInt(stepBtn.dataset.goto,10)), 1); return; }
+    if(stepBtn){
+      var target=parseInt(stepBtn.dataset.goto,10);
+      if(target>firstIncompleteStep()){
+        toast("יש להשלים את הצעד הנוכחי לפני מעבר לצעד הבא");
+        return;
+      }
+      go(stepFirstIdx(target), 1);
+      return;
+    }
 
     var pt=t.closest?t.closest(".map-pt"):null;
     if(pt){
