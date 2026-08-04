@@ -1218,9 +1218,7 @@
     var justCompletedStep = !wasStepDone && stepAnswered(s.id)===NQ;
     refreshResults(card.step);
 
-    /* auto-advance with short delay (re-click resets the timer) */
-    var note=$("advanceNote");
-    if(note){ note.textContent="✓ נקלט — עוברים לשאלה הבאה…"; note.className="advance-note on"; }
+    /* advance immediately after selection */
     clearTimeout(advanceTimer);
     advanceTimer=setTimeout(function(){
       go(state.cardIdx+1,1);
@@ -1228,7 +1226,7 @@
         if(allComplete()){ sndFinish(); }
         else{ sndStep(); celebrate(card.step); }
       }
-    },650);
+    },120);
   }
 
   document.addEventListener("click",function(e){
