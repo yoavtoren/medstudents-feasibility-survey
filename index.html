@@ -1023,9 +1023,8 @@
   var IMPACT_ROW_LABELS=["נמוך","בינוני","גבוה","גבוה מאוד"];
   var X_TICK_LABELS={1:"נמוכה מאוד",2:"נמוכה",3:"בינונית",4:"גבוהה",5:"גבוהה מאוד"};
   function renderMap(){
-    var completedCount=0;
-    STEPS.forEach(function(s){ if(stepAnswered(s.id)===NQ) completedCount++; });
-    $("mapEmpty").style.display = completedCount ? "none" : "";
+    var showPoints = allComplete();
+    $("mapEmpty").style.display = showPoints ? "none" : "";
     var W=720,H=360,padL=64,padR=26,padT=18,padB=64;
     var plotW=W-padL-padR, plotH=H-padT-padB;
     function xPos(v){ return padL+((v-1)/4)*plotW; }
