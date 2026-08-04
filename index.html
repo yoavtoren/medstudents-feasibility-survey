@@ -879,12 +879,6 @@
     if(c.pred){ var p=esc(c.pred); q=q.replace(p,'<span class="qpred">'+p+'</span>'); }
     return q;
   }
-  function markQ_old(c){
-    var q=esc(c.question);
-    if(!c.mark) return q;
-    var m=esc(c.mark);
-    return q.replace(m,'<mark class="qmark">'+m+'</mark>');
-  }
   var toastTimer=null;
   function toast(msg,ok){
     var t=$("toast"); t.textContent=msg; t.className=ok?"ok show":"show";
