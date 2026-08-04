@@ -957,14 +957,17 @@
   function renderSidebar(){
     var html="";
     var curStep = CARDS[state.cardIdx].step;
+    var maxStep = firstIncompleteStep();
     STEPS.forEach(function(s,i){
       var n=stepAnswered(s.id);
+      var locked = i>maxStep;
       var cls=n===NQ?"complete":(n>0?"partial":"");
+      if(locked) cls+=" locked";
       var cur=(curStep===i)?" current":"";
-      html+='<li><button type="button" class="step-item '+cls+cur+'" data-goto="'+i+'" aria-label="'+esc(s.name)+', נענו '+n+' מתוך '+NQ+'">'
+      html+='<li><button type="button" class="step-item '+cls+cur+'" data-goto="'+i+'" aria-disabled="'+(locked?"true":"false")+'" aria-label="'+esc(s.name)+', נענו '+n+' מתוך '+NQ+(locked?", נעול עד השלמת הצעדים הקודמים":"")+'">'
         + '<span class="step-num" style="background:'+STEP_COLORS[i]+'">'+(i+1)+'</span>'
         + '<span class="step-label">'+esc(s.shortName)+'</span>'
-        + '<span class="step-status">'+n+'/'+NQ+'</span></button></li>';
+        + '<span class="step-status">'+(locked?"🔒 ":"")+n+'/'+NQ+'</span></button></li>';
     });
     $("stepList").innerHTML=html;
 
