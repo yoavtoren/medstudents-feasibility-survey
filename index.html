@@ -1174,15 +1174,6 @@
     });
     $("mapLegend").innerHTML=h;
   }
-  function showMapDetail(i){
-    var s=STEPS[i], fs=feasibilityScore(s.id), b=impactBucket(s.probability);
-    var d=$("mapDetail");
-    d.innerHTML='<div class="md-title"><span style="color:'+STEP_COLORS[i]+'">●</span> '+(i+1)+'. '+esc(s.name)+'</div>'
-      + '<div><b>ציון היתכנות יישום:</b> '+fs.toFixed(1)+' מתוך 5 ('+feasLabel(fs)+')</div>'
-      + '<div><b>פוטנציאל השפעה על פי הסקר:</b> '+Math.round(s.probability*100)+'% ('+b.label+')</div>';
-    d.classList.remove("visible"); void d.offsetWidth; d.classList.add("visible");
-  }
-
   function conclusionText(s){
     var r=state.ratings[s.id], fs=feasibilityScore(s.id), b=impactBucket(s.probability);
     var hi=b.level>=3, fL=feasLabel(fs), parts=[];
