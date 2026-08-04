@@ -1424,6 +1424,13 @@
     else if(e.key==="ArrowRight"){ go(state.cardIdx-1,-1); }
   });
 
+  /* re-draw the map with the geometry that fits the new width (rotation / resize) */
+  var resizeTimer=null;
+  window.addEventListener("resize",function(){
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(function(){ renderMap(true); },150);
+  });
+
   /* ==================== init ==================== */
   var hadSaved=loadState();
   if(hadSaved) $("resumeNote").style.display="block";
